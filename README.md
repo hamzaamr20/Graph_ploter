@@ -1,8 +1,6 @@
 
 # RF Data & Smith Chart Analyzer
 
-A professional-grade engineering dashboard developed for the graduation project: **"Design and Implementation of a Dual-Band Microstrip Rectenna System for Sustainable Energy Harvesting in Wi-Fi Networks."**
-
 This tool provides high-precision visualization and analysis for S-parameter data, streamlining the testing phase of microstrip antenna systems.
 
 ## Features
