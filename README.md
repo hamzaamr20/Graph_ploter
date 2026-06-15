@@ -1,49 +1,36 @@
 
-# RF Data & Smith Chart Analyzer
 
-This tool provides high-precision visualization and analysis for S-parameter data, streamlining the testing phase of microstrip antenna systems.
+# Universal Data & RF Analyzer - Rectenna Edition 📡
 
-## Features
+A comprehensive, Python-based Electronic Design Automation (EDA) dashboard built to analyze RF networks, evaluate antenna radiation patterns, and calculate composite right/left-handed (CRLH) metamaterial parameters.
 
-* **Universal Data Parsing:** Natively handles Touchstone files (`.s1p` to `.s4p`) as well as standard `.csv` and `.txt` measurement data.
-* **Interactive Visualization:**
-* **2D Plotting:** Real-time plotting of reflection coefficients ($S_{11}$) in dB.
-* **Smith Chart:** Dynamic RF impedance visualization using `scikit-rf`.
+This software was developed specifically as the computational engineering tool for our **Electrical and Electronics Engineering Graduation Project** at **Badr University Cairo**.
 
+## Project Context 🎓
 
-* **Professional Marker System:**
-* ADS-style marker displays including Frequency, Magnitude (dB), Phase (°), and Normalized Impedance ($Z = Z_0 \times (r \pm jx)$).
-* Left-side summary panel for organized, report-ready data tracking.
+This tool was created to support the research, design, and mathematical verification of our final thesis:
+**"Design and Implementation of a Dual-Band Microstrip Rectenna System for Sustainable Energy Harvesting in Wi-Fi Networks."**
 
 
-* **Research-Grade Workflow:** Designed to support the simulation and experimental validation of dual-band rectenna systems.
+## Key Features ⚙️
 
-## Technical Stack
+* **Interactive 2D Plotting:** Load standard `.csv` or `.txt` data files to visualize circuit parameters with an interactive, highly tolerant click-to-pin marker system.
+* **Touchstone & Smith Chart Integration:** Import standard `.sNp` files (like `.s1p` and `.s2p`) directly from Keysight ADS or CST Studio. Dynamically tracks markers across a 2D magnitude plot and an RF Impedance Smith Chart simultaneously, while automatically calculating and plotting the conjugate matching target ($Z_{Match}$).
+* **CST Farfield Parser:** A robust data parser built to read raw ASCII Farfield Directivity/Gain exports from CST Studio. Automatically translates multi-column spatial data into highly formatted, presentation-ready polar plots.
+* **Metamaterial Phase Solver:** An analytical tool designed to extract the Right-Handed ($L_R$, $C_R$) and Left-Handed ($L_L$, $C_L$) unit cell parameters required for dual-band phase compensation. It intelligently scales between Standard RH Microstrip mode and Dual-Band CRLH Metamaterial mode.
+* **Automated PDF Reporting:** A one-click documentation tool that compiles all active graphs, Smith Charts, Polar Plots, and terminal math derivations into a clean, formatted PDF for academic reporting.
 
-* **Language:** Python 3.11
-* **Core Libraries:**
-* `scikit-rf`: For microwave network analysis and Smith Chart generation.
-* `matplotlib`: For high-fidelity technical plotting.
-* `tkinter`: For a lightweight, responsive graphical interface.
-* `PyInstaller`: For standalone Windows deployment.
+## Technology Stack 💻
 
+* **Language:** Python
+* **GUI Framework:** Tkinter (Modern Clam Theme)
+* **RF Analysis:** scikit-rf
+* **Data Handling & Parsing:** Pandas, NumPy
+* **Data Visualization:** Matplotlib
 
+## How to Run 🚀
 
-## Installation
-
-1. Navigate to the **Releases** section on the right sidebar.
-2. Download the latest `RF_Analyzer.exe`.
-3. Run the application—no Python installation or environment setup required.
-
-## Usage
-
-* **Load Data:** Click the "Load Data" button to import your measurement files.
-* **Add Markers:** Input a specific frequency and click "Add Marker" to analyze impedance at that point.
-* **Analyze:** Use left-click to drop markers directly onto curves and right-click to remove them.
-* **Report:** Use the built-in toolbar at the bottom of each tab to save high-resolution plots for your project reports.
-
----
-
-*Developed by Hamza Amr.*
-
----
+1. Clone this repository to your local machine.
+2. Ensure you have the required dependencies installed: `pip install numpy pandas matplotlib scikit-rf`
+3. Run the main script: `python graph_plot.py`
+4. Alternatively, use the standalone executable (`.exe`) provided in the latest release!
